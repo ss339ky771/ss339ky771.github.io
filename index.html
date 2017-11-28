@@ -10,16 +10,18 @@
     <h1>gitの使い方～初めてのgithub～</h1>
 <p>Githubとはファイルのバージョンを管理してくれるもの</p>
 
+
+<p>ファイルのあげ方</p>
     <table border="1">
         <tr> 
             <th>やること</th><th>コマンド</th>
         </tr>
         <tr>
-            <td>ユーザー設定をする。</td><td>git config --global user.name "ユーザ名"<br>
-                                            git config --global user.email メールアドレス</td>
+            <td>ユーザー設定をする。初めて使う時だけやる。</td><td>git config --global user.name "ユーザ名"<br>
+                                            git config --global user.email "メールアドレス"</td>
         </tr>
         <tr>
-            <td>gitの初期化をする。gitの管理下に置きたいファイルで実行する。</td><td>git init</td>
+            <td>gitの初期化をする。gitの管理下に置きたいファイルで実行する。.gitのファイルが出来ているかかくにんをする。</td><td>git init</td>
         </tr>
         <tr>
             <td>コミット待ちの状態にする。.のあとに何も書かないと全部のファイルをやる</td><td>git add.</td>
@@ -28,14 +30,28 @@
             <td>コミットする。</td><td>git commit -m "コメント"</td>
         </tr>
         <tr>
-            <td>gitのリポジトリに登録する。-uは最初だけ入れる</td><td>git push (-u) origin master</td>
+            <td>gitのリポジトリに登録する。-uは最初だけ入れる。originのあとは枝の名前</td><td>git push (-u) origin master</td>
+        </tr>
+</table>
+<p>ほかのコマンドメモ</p>
+<table>
+        <tr> 
+                <th>説明</th><th>コマンド</th>
         </tr>
         <tr>
-            <td></td><td></td>
+            <td>susiという枝を作る</td><td>git branch susi</td>
         </tr>
-       
+        <tr>
+                <td>susiという枝に移動</td><td>git checkout susi</td>
+        </tr>
+        <tr>
+                <td>gitの状態を見る</td><td>git status</td>
+        </tr>
+        <tr>
+                <td>コミットのログを見る</td><td>git log</td>
+        </tr>
+</table>
 
 
-    </table>
 </body>
 </html>

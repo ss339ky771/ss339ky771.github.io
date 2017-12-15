@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>github説明のページ</title>
+</head>
+<style>
+    #ok{
+        width: 200px;
+    height: 200px;
+    }
+    </style>
+<body>
+    <form >
+        <label for="isbn">寿司ネタ</label>
+        <select name="isbn" id="isbn">
+            <option value="">----寿司ネタを選択-------</option>
+            <option value="maguro.html">マグロ</option>
+            <option value="salmon.html">サーモン</option>
+            <option value="tamago.html">玉子</option>
+            <option value="git.html">githubの説明</option>
+        </select>
+    </form>
+   
+    <h1>gitの使い方</h1>
+    <p>ファイルのあげ方</p>
+    <table border="1">
+        <tr> 
+            <th>やること</th><th>コマンド</th>
+        </tr>
+        <tr>
+            <td>ユーザー設定をする。初めて使う時だけやる。</td><td>git config --global user.name "ユーザ名"<br>
+                                            git config --global user.email "メールアドレス"</td>
+        </tr>
+        <tr>
+            <td>gitの初期化をする。gitの管理下に置きたいファイルで実行する。.gitのファイルが出来ているかかくにんをする。</td><td>git init</td>
+        </tr>
+        <tr>
+            <td>コミット待ちの状態にする。.のあとに何も書かないと全部のファイルをやる</td><td>git add.</td>
+        </tr>
+        <tr>
+            <td>コミットする。</td><td>git commit -m "コメント"</td>
+        </tr>
+        <tr>
+            <td>gitのリポジトリに登録する。-uは最初だけ入れる。originのあとは枝の名前</td><td>git push (-u) origin master</td>
+        </tr>
+</table>
+
+<p>ほかのコマンドメモ</p>
+<table border="1">
+        <tr> 
+                <th>説明</th><th>コマンド</th>
+        </tr>
+        <tr>
+            <td>susiという枝を作る</td><td>git branch susi</td>
+        </tr>
+        <tr>
+                <td>susiという枝に移動</td><td>git checkout susi</td>
+        </tr>
+        <tr>
+                <td>gitの状態を見る</td><td>git status</td>
+        </tr>
+        <tr>
+                <td>コミットのログを見る</td><td>git log</td>
+        </tr>
+</table>
+<img src="./オクトキャット.png" alt="オクトキャットの画像" id="ok">
+    <h2>github-pagesの作り方</h2>
+    <p>「GitHub Pages」は、「GitHub」を使ってホームページを公開することができる機能です。
+            GitHubの アカウント を持っていない場合はGitHub公式サイトから作成しする。<br>
+            ホームページのトップに「 ユーザー 名」「メールアドレス」「パスワード」を入力することで、簡単に アカウント を作成することが可能。<br>
+            ユーザー 名がGitHub Pagesの URL 「ユーザー名.github.io」になる。メールアドレスの認証まで済むと、実際にリポジトリの作成から行うことができる。<br>
+        リポジトリとは、関連するファイルやフォルダをまとめておく、GitHubにおける貯蔵庫のようなもの。<br>
+        リポジトリ名(Repogitory Name)の欄には、「ユーザー名.github.io」の形で入力し、ログイン後、リポジトリを新規作成する。
+    </p>
+    <h3>github-pagesの更新の仕方</h3>
+    <p>git commit -m "コメント"でコミットしてgit push (-u) origin masterでプッシュする。</p>
+   
+    
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+</script>
+
+
+</body>
+</html>

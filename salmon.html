@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>サーモンのページ</title>
 </head>
+<style>
+    #ok{
+        width: 300px;
+        height: 200px;
+    }
+    </style>
 <body>
     <form >
         <label for="isbn">寿司ネタ</label>
@@ -16,13 +22,16 @@
             <option value="tamago.html">玉子</option>
         </select>
     </form>
-    <img src="./sarmon1.jpg" alt="サーモンの画像">
+    <img src="./sarmon1.jpg" alt="サーモンの画像" id="ok">
+    <h1>鮭の豆知識</h1>
+    <p>サケ類には裂頭条虫科のサナダムシや、アニサキスが寄生していることが多いため、冷凍処理を行わないものを生食することは感染のおそれが高い。</p>
     <script>
     document.addEventListener('DOMContentLoaded',function(){
         document.getElementById('isbn').addEventListener('change',function(){
             location.href = this.value;
         },false);
     },false);
+
 </script>
 </body>
 </html>

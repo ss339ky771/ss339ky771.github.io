@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>たまごのページ</title>
 </head>
+<style>
+#ok{
+    width: 300px;
+    height: 200px;
+}
+</style>
 <body>
     <form >
         <label for="isbn">寿司ネタ</label>
@@ -16,13 +22,16 @@
             <option value="tamago.html">玉子</option>
         </select>
     </form>
-    <img src="./tamago.jpg" alt="玉子の画像">
+    <img src="./tamago.jpg" alt="玉子の画像" id="ok">
+    <h1>玉子の豆知識</h1>
+    <p>鶏卵の場合は生のものを「卵」、料理されたものを「玉子」と表記することが多い</p>
     <script>
     document.addEventListener('DOMContentLoaded',function(){
         document.getElementById('isbn').addEventListener('change',function(){
             location.href = this.value;
         },false);
     },false);
+
 </script>
 </body>
 </html>

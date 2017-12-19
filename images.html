@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Documentオブジェクトテスト用コード</title>
+<style>
+#image{
+width: 500px;
+height:300px ;
+}
+</style>
+
+</head>
+<body>
+        <form >
+                <label for="isbn">寿司ネタ</label>
+                <select name="isbn" id="isbn">
+                    <option value="">----ページを選択-------</option>
+                    <option value="maguro.html">マグロ</option>
+                    <option value="salmon.html">サーモン</option>
+                    <option value="tamago.html">玉子</option>
+                    <option value="git.html">githubの説明</option>
+                    <option value="images.html">画像の変更</option>
+                </select>
+            </form>
+
+<p><img id ="image" src="./images/book.jpg" alt="花" /></p>
+<button>画像を変更</button>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+    window.addEventListener("load", function(){
+    
+        // 画像インデックス
+        var imageIndex = 0;
+    
+        // リスナー登録 TagNameは同じタグ名すべてを取得する
+        document.getElementsByTagName("button")[0].addEventListener("click", function(){
+            // 画像イメージをインクリメント
+            if (imageIndex < 3) {
+                imageIndex++;
+            } else {
+                imageIndex = 0;
+            }
+            // 画像srcを変更
+            switch(imageIndex) {
+                case 0:
+                    imageSrc = "./images/book.jpg";
+                    break;
+                case 1:
+                    imageSrc = "./images/dark-mood.jpg";
+                    break;
+                case 2:
+                    imageSrc = "./images/chess.jpg";
+                    break;
+                case 3:
+                    imageSrc = "./images/sunrise.jpg";
+                    break;
+            }
+            document.getElementById("image").src = imageSrc;
+    
+        }, false);
+    });
+    </script>
+</body>
+</html>

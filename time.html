@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+                <form >
+                        <label for="isbn">ページ選択</label>
+                        <select name="isbn" id="isbn">
+                            <option value="">---ページを選択-------</option>
+                            <option value="maguro.html">マグロ</option>
+                            <option value="salmon.html">サーモン</option>
+                            <option value="tamago.html">玉子</option>
+                            <option value="git.html">githubの説明</option>
+                            <option value="images.html">画像の変更</option>
+                            <option value="showUserAgent.html">ブラウザー判定</option>
+                            <option value="open.html">wondow.open()close()focus()</option>
+                            <option value="console.html">consoleの説明</option>
+                            <option value="time.html">時間をはかる</option>
+                        </select>
+                    </form>
+                <br>
+                <center>
+                <form name="timer">
+                  <input type="text" size="5">分
+                  <input type="text" size="5">秒
+                  <input type="button" value="開始" onclick="countStart()">
+                </form>
+              </center>
+              <script>
+            document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+         var timerdesu = "";
+                
+            
+         function countStart() {
+            document.timer.elements[2].disabled = true;
+            timerdesu = setInterval("countDown()", 1000);
+          }
+            
+                
+         function countDown() {
+             var min = document.timer.elements[0].value;
+            var sec = document.timer.elements[1].value;
+            
+            if ((min == "") && (sec == ""))
+              {
+              window.alert("入力してください");
+               reSet();
+             }
+          else {
+           if (min == "") min = 0;
+             min = parseInt(min);
+            if (sec == "") sec = 0;
+  　         sec = parseInt(sec);
+              tmWrite(min * 60 + sec - 1);
+              }
+            }
+            function tmWrite(int) {
+              int = parseInt(int); 
+                 if (int <= 0) {
+                  reSet();
+                  window.alert("時間ですよ。");
+                }
+                else {
+              document.timer.elements[0].value = Math.floor(int / 60);
+              document.timer.elements[1].value = int % 60;
+             }
+            }
+             function reSet() {
+                document.timer.elements[0].value = "0";
+                document.timer.elements[1].value = "0";
+          document.timer.elements[2].disabled = false;
+         clearInterval(timerdesu);
+       }
+        </script>
+</body>
+</html>

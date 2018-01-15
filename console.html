@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>consoleメソッド</title>
+          <style>
+          
+          </style>
+        </head>
+        <body>
+                <form >
+                        <label for="isbn">ページ選択</label>
+                        <select name="isbn" id="isbn">
+                            <option value="">---ページを選択-------</option>
+                            <option value="maguro.html">マグロ</option>
+                            <option value="salmon.html">サーモン</option>
+                            <option value="tamago.html">玉子</option>
+                            <option value="git.html">githubの説明</option>
+                            <option value="images.html">画像の変更</option>
+                            <option value="showUserAgent.html">ブラウザー判定</option>
+                            <option value="open.html">wondow.open()close()focus()</option>
+                            <option value="console.html">consoleの説明</option>
+                            <option value="time.html">時間をはかる</option>
+
+                        </select>
+                    </form><center>
+        
+            <h1>consoleオブジェクトの使い方</h1>
+          <h2>consoleメソッド</h2>
+          <table border="1">
+            <tr><th>メソッド名</th><th>説明</th><th>使い方</th></tr>
+            <tr><td>log()</td><td >コンソールに「ログメッセージ」を出力する</td>
+                <td rowspan="4">log,info,warn,errorメソッドを利用することにより、メッセージやアイコンに色が付き見やすくなったり、<br>
+                コンソール上でボタンのオン/オフで表示ログを絞れる。（Google Chromeの場合）</td></tr>
+            <tr><td>info()</td><td>コンソールに「情報メッセージ」を出力する</td></tr>
+            <tr><td>warn()</td><td>コンソールに「警告メッセージ」を出力する</td></tr>
+            <tr><td>error()</td><td>コンソールに「エラーメッセージ」を出力する</td></tr>
+            <tr><td>group()</td><td>グループ表示を開始する（展開された状態）</td>
+                <td rowspan="2">group,groupEndメソッドを利用すること，groupからgroupEndまでのログをグループ化できる。</td></tr>
+            <tr><td>groupEnd()</td><td>グループ表示を終了する</td><td></td></tr>
+            <tr><td>count()</td><td>コンソールに「ラベル」と、「回数」を出力する</td><td>countメソッドはラベルが同一のものの回数を数えることができる。</td></tr>
+            <tr><td>trace()</td><td>コンソールに「メソッドの呼び出し階層」を出力する</td>
+                <td>関数１の中で関数2が、関数2の中で関数3がというような複数の関数が<br>関連して動作してるとき関係を見やすくする</td></tr>
+            <tr><td>time()</td><td>タイマーを開始する</td><td rowspan="2">time,timeEndメソッドを使うことでtimeが実行してからtimeEndまでの時間を計測できる</td></tr>
+            <tr><td>timeEnd()</td><td>タイマーを終了する</td><td></td></tr>
+            <tr><td>assert()</td><td>診断結果が偽の場合、コンソールに「エラーメッセージ」を出力する</td><td>関数に対して不適切な値が渡されたようなケースをチェック、警告するようなときに使える。</td></tr>
+            <tr><td>dir()</td><td>コンソールに「オブジェクト」を出力する。プロパティ名と中身の値を確認できる</td><td>オブジェクトの形を人にとって見やすい形で出力できる。</td></tr>
+          </table></center>
+          <script>
+                document.addEventListener('DOMContentLoaded',function(){
+                    document.getElementById('isbn').addEventListener('change',function(){
+                        location.href = this.value;
+                    },false);
+                },false);
+            </script>
+          </body>
+        </html>
+</body>
+</html>

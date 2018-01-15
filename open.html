@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>window</title>
+</head>
+<body>
+    <form >
+        <label for="isbn">ページ選択</label>
+        <select name="isbn" id="isbn">
+            <option value="">---ページを選択-------</option>
+            <option value="maguro.html">マグロ</option>
+            <option value="salmon.html">サーモン</option>
+            <option value="tamago.html">玉子</option>
+            <option value="git.html">githubの説明</option>
+            <option value="images.html">画像の変更</option>
+            <option value="showUserAgent.html">ブラウザー判定</option>
+            <option value="open.html">wondow.open()close()focus()</option>
+            <option value="console.html">consoleの説明</option>
+            <option value="time.html">時間をはかる</option>
+        </select>
+    </form>
+    <h1>window.open()　close()　focus()</h1>
+    <h2>window.open()</h2>
+    <form>
+    <input type="button" value="小窓" onclick="sub1()">
+    </form>
+    <p>window.open()は別のウィンドウを開きます。
+        今回はボタンを押すと別ウィンドウを開く設定にします。
+    </p>
+    <p>サンプルコード<br></p>
+    <img src="./images/open.png" alt="サンプル">
+    <p>inputでボタンを作ってonclickにイベント名を入れます。
+    scriptの中にはfunction イベント名()で｛｝の中にwindow.open()を入れます。<br>
+    window.openの（）内には開きたいＵＲＬを入れて次にウィンドウ名、最後のオプションには
+    ウィンドウの小窓の大きさなどの様々な設定ができます
+    </p>
+    <h2>window.close()</h2>
+    <input type="button" value="小窓2" onclick="sub2()">
+    <p>window.close()はウィンドウを閉じます</p>
+    <p>サンプルコード</p>
+    <img src="./images/close.png" alt="サンプル">
+    <p>inputでボタンを作ってonclickにイベント名をいれます。<br>
+        scriptの中にはfunction イベント名()で｛｝の中にwindow.close()を入れます。
+    </p>
+    <h2>window.focus()</h2>
+    <input type="button" value="小窓３" onclick="sub3()">
+    <p>window.focus()はウィンドウを手前に表示できます</p>
+    <img src="./images/focus.png" alt="サンプル">
+    <p>inputでボタンを作ってonclickにイベント名をいれます。<br>
+    scriptの中にはfunction イベント名()で｛｝の中にwindow.focus()を入れます。
+    </p>
+    <footer></footer>
+    <script>
+       document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+    function sub1() {
+        window.open('window1.html','Document','width=400, height=300,');
+    }
+    function sub2() {
+        window.open('window2.html','Document','width=400, height=300,');
+    }
+    function sub3() {
+        window.open('window3.html','Document','width=400, height=300,');
+    }
+    </script>
+</body>
+</html>

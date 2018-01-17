@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <form >
+                <label for="isbn">ページ選択</label>
+                <select name="isbn" id="isbn">
+                    <option value="">---ページを選択-------</option>
+                    <option value="maguro.html">マグロ</option>
+                    <option value="salmon.html">サーモン</option>
+                    <option value="tamago.html">玉子</option>
+                    <option value="git.html">githubの説明</option>
+                    <option value="images.html">画像の変更</option>
+                    <option value="showUserAgent.html">ブラウザー判定</option>
+                    <option value="open.html">wondow.open()close()focus()</option>
+                    <option value="console.html">consoleの説明</option>
+                    <option value="time.html">時間をはかる</option>
+                    <option value="handered1.html">100から５マイナス0まで</option>
+                </select>
+            </form>
+    <select name="" id="ok">
+        
+    </select>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+        
+        var suu = 100
+        var kazu = document.getElementById("ok");
+    for(var i=0; i <= 20; i++){
+        var option = document.createElement("option");
+        option.innerHTML= suu;
+        suu=suu-5
+        kazu.appendChild(option);
+        
+    }
+    </script>
+</body>
+</html>

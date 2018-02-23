@@ -35,19 +35,19 @@
     <p>私の紹介するJQueryは元々あるtableの行を追加や削除するものなので<br>
         準備としてtableを作っておくことが必要になります。</p>
     <h2>1.追加</h2>
-    <img src="images/追加.png">
+    <img src="images/tuika.png">
     <p>行の追加のコードはこんな感じです。<br>
         .onメソッドでaddListのボタンがクリックされたとき、<br>
         t2がtrよりも多い場合.eq(0)で最初の行を指定して、<br>
         .cloneで複製、insertAfterでparentの取得した親要素に入れる感じです。
     <h2>２．削除</h2>
-        <img src="images/削除.png">
+        <img src="images/sakujyo.png">
         <p>行の削除のコードはこんな感じです。<br>
             .onメソッドでremoveListのボタンがクリックされたとき、<br>
             parentの取得した親要素を削除します。
         </p>
     <h2>3.変更</h2>
-    <img src="images/変更.png">
+    <img src="images/henkou.png">
     <p>.onメソッドでListがchange(変更)されたときparentの取得し親要素の<br>
     .nextで同じ階層の次の要素を取得して.htmlで文字を変更します。
     </p>

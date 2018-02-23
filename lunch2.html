@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <titleランチ２</title>
+</head>
+<body>
+    <form >
+        <label for="isbn">ページ選択</label>
+        <select name="isbn" id="isbn">
+            <option value="">---ページを選択-------</option>
+            <option value="maguro.html">マグロ</option>
+            <option value="salmon.html">サーモン</option>
+            <option value="tamago.html">玉子</option>
+            <option value="git.html">githubの説明</option>
+            <option value="images.html">画像の変更</option>
+            <option value="showUserAgent.html">ブラウザー判定</option>
+            <option value="open.html">wondow.open()close()focus()</option>
+            <option value="console.html">consoleの説明</option>
+            <option value="time.html">時間をはかる</option>
+            <option value="handered1.html">100から５マイナス0まで</option>
+            <option value="JQuery.html">JQuery説明</option>
+            <option value="lunch2.html">cookieメニュー</option>
+
+        </select>
+    </form>
+    <form name="menu" action="lunch2.html">
+        <table border="1">
+        <thead>
+            <tr>
+                <td>注文</td>
+                <td>追加</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="radio" name="radio" value="蒙古ラーメン">蒙古ラーメン</td>
+                <td><input type="checkbox" name="check">大盛</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="radio" value="一楽ラーメン">一楽ラーメン</td>
+                <td><input type="checkbox" name="check">半チャーハン</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="radio" value="節骨ラーメン">節骨ラーメン</td>
+                <td><input type="checkbox" name="check">餃子</td>
+            </tr>
+            <tr>
+                <td><input type="button" value="注文" onclick="tyumon()"></td>
+                <td><input type="checkbox" name="check">なし</td>
+            </tr>
+        </tbody>
+        </table>
+        </form>
+        <script type="text/javascript">
+
+    function tyumon() {
+      if(document.cookie == ""){ 
+        for(var i = 0; i < menu.radio.length; i++){
+          if(menu.radio[i].checked == true){
+
+            var hoge = menu.radio[i].value;
+
+            var oomori = menu.check[0].checked;
+            var hantya = menu.check[1].checked;
+            var tyaozu = menu.check[2].checked;
+            var nasi = menu.check[3].checked;
+
+            var a2 = "";
+            var a3 = "";
+            if(oomori == true){
+              a2 = a2 + "\n" + '大盛';
+            }
+            if(hantya == true){
+              a2 = a2 + "\n" + '半チャーハン';
+              
+            }
+            if(tyaozu == true){
+              a2 = a2 + "\n" + '餃子';
+            }
+            if(nasi == true){
+              a2 = a2 + "\n" + 'なし';
+            }
+
+            document.cookie = hoge + a2 + ";max-age=180;path=/";
+            alert("注文は" + "\n" + hoge + a2 + "\n" + "ですね？");
+            time = setTimeout("countDown()", 120000);
+          }
+        }
+      }else{
+        alert("お客様は注文済みです。" + "\n" + document.cookie + "\n" + "しばらくお待ちください。");
+      }
+    }
+    function countDown(){
+      alert("時間がたちましたわ");
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+        </script>
+</body>
+</html>

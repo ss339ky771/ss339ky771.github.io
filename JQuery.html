@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/JQuery.css">
+    <title>JQuery</title>
+</head>
+<body>
+        <form >
+                <label for="isbn">ページ選択</label>
+                <select name="isbn" id="isbn">
+                    <option value="">---ページを選択-------</option>
+                    <option value="maguro.html">マグロ</option>
+                    <option value="salmon.html">サーモン</option>
+                    <option value="tamago.html">玉子</option>
+                    <option value="git.html">githubの説明</option>
+                    <option value="images.html">画像の変更</option>
+                    <option value="showUserAgent.html">ブラウザー判定</option>
+                    <option value="open.html">wondow.open()close()focus()</option>
+                    <option value="console.html">consoleの説明</option>
+                    <option value="time.html">時間をはかる</option>
+                    <option value="handered1.html">100から５マイナス0まで</option>
+                    <option value="JQuery.html">JQuery説明</option>
+                    <option value="lunch2.html">cookieメニュー</option>
+        
+                </select>
+            </form>
+    <h1>3つのJQuery</h1>
+    <p>私の選んだ3つのJQueryはtableタグの行を追加、削除、一部の変更をするものです。</p>
+    <h2>事前準備</h2>
+    
+    <img src="images/table.png">
+    <p>私の紹介するJQueryは元々あるtableの行を追加や削除するものなので<br>
+        準備としてtableを作っておくことが必要になります。</p>
+    <h2>1.追加</h2>
+    <img src="images/追加.png">
+    <p>行の追加のコードはこんな感じです。<br>
+        .onメソッドでaddListのボタンがクリックされたとき、<br>
+        t2がtrよりも多い場合.eq(0)で最初の行を指定して、<br>
+        .cloneで複製、insertAfterでparentの取得した親要素に入れる感じです。
+    <h2>２．削除</h2>
+        <img src="images/削除.png">
+        <p>行の削除のコードはこんな感じです。<br>
+            .onメソッドでremoveListのボタンがクリックされたとき、<br>
+            parentの取得した親要素を削除します。
+        </p>
+    <h2>3.変更</h2>
+    <img src="images/変更.png">
+    <p>.onメソッドでListがchange(変更)されたときparentの取得し親要素の<br>
+    .nextで同じ階層の次の要素を取得して.htmlで文字を変更します。
+    </p>
+    </p>
+    <h2>実装結果</h2>
+        <table id="t1" border="1">
+
+                <thead>
+                <tr>
+                  <th>リスト選択</th>
+                  <th>リスト名</th>
+                  <th>追加/削除</th>
+                </tr>
+                </thead>
+                
+                <tbody id="t2">
+                <tr>
+                  <td>
+                    <select class="List">
+                      <option>A</option><option>B</option><option>C</option>
+                    </select>
+                  </td>
+                  <td>A</td>
+                  <td>
+                    <input value="+" type="button" class="addList" />　
+                    <input value="-" type="button" class="removeList" />
+                  </td>
+                </tr>
+                </tbody>
+                
+                </table>
+                <p>こんな感じになります！！</p>
+                <h2>感想</h2>
+                <p>このJQueryを選んだ理由は、tableは個人的に結構使っているので、<br>
+                    tableに関連するJQureyを探したところ、追加削除をできるのは面白いと思い、<br>
+                    これを選択しました。<br>
+                    導入すると簡単に動きがつくれるJQueryはとても面白かったのですが、<br>
+                    ほとんど検索して説明を作っていたので、もっと勉強が必要だと感じました。
+                </p>
+    
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script>
+    $("#t2 > tr").eq(0).clone(true).insertAfter($("#t2 > tr")).eq(0);
+
+    $(document).ready(function () {
+        $(document).on("click", ".addList", function () {
+            $("#t2 > tr").eq(0).clone(true).insertAfter(
+            $(this).parent().parent()
+            );
+        });
+    $(document).on("click", ".removeList", function () {
+        $(this).parent().parent().remove();
+     });
+    });
+    $(document).on("change", ".List", function () {
+    $(this).parent().next().html($(this).val());
+  });
+  document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('isbn').addEventListener('change',function(){
+            location.href = this.value;
+        },false);
+    },false);
+</script>
+</html>

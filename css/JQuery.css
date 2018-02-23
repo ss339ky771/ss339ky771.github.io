@@ -1,3 +1,7 @@
 #t2 tr:first-child {
     display: none;
   }
+footer{
+  padding: 2%;
+  background-color: darkgrey;
+}

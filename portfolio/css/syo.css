@@ -1,0 +1,20 @@
+
+.syoukai{
+    display: flex;
+}
+.jiga{
+    text-align: center;
+}
+.jiga img{
+    padding-top: 3%;
+    width: 50%;
+}
+.jikosyo{
+    padding-left: 7%;
+}
+.jikosyo li{
+    list-style-type: none;
+    color: white;
+    padding-top:2%; 
+    font-size: 3vw;
+}

@@ -1,0 +1,17 @@
+h1{
+    color: white;
+    text-align: center;
+}
+
+.cont{
+    color: white;
+    text-align: center;
+}
+textarea{
+    resize:none;
+    width: 300px;
+    height: 200px;
+}
+span{
+    color: rgb(248, 155, 155);
+}

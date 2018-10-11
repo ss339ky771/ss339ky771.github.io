@@ -1,0 +1,54 @@
+h2{
+    color: white;
+    text-align: center;
+}
+.jissekigazou{
+    display: flex;
+    width: 100%;
+}
+.jissekiblock,img{
+    width: 50%;
+}
+.jissekiblock > p{
+    float: right;
+    overflow: hidden;
+    font-size: 7vw;
+    color: white;
+}
+.jissekisikaku{
+    display: flex;
+    width: 100%;
+
+}
+.jissekisikakub{
+    width:90%;
+    margin-left: 15%;
+}
+.jissekisikakub > p{
+    float: right;
+    overflow: hidden;
+    font-size: 7vw;
+    color: white;
+}
+.jissekisikakup{
+    color: white;
+    padding-left:10%; 
+    font-size: 3vw;
+    margin-top: 0;
+    padding-top:0; 
+}
+.jissekisikaku{
+    margin-top: 0;
+    padding-top: 0;
+}
+.jissekisikaku > div{
+    margin-top: 0;
+    padding-top: 0;
+}
+.jissekisikakup:nth-of-type(2n){
+    margin-left: 5%;
+}
+.jissekisaito{
+    width: 100%;
+    text-align: center;
+}

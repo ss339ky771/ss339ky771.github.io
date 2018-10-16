@@ -11,7 +11,7 @@
       $('body').addClass('fadeout');  // bodyに class="fadeout"を挿入
       setTimeout(function(){
         window.location = url;  // 0.8秒後に取得したURLに遷移
-      }, 1200);
+      }, 1000);
     }
     return false;
   });

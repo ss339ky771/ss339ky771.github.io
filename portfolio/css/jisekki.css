@@ -8,12 +8,14 @@ h2{
 }
 .jissekiblock,img{
     width: 50%;
+    text-align: center;
 }
 .jissekiblock > p{
     float: right;
     overflow: hidden;
     font-size: 7vw;
     color: white;
+
 }
 .jissekisikaku{
     display: flex;

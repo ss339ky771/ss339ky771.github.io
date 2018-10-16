@@ -2,8 +2,8 @@
 body{
     font-family:'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic' ; 
     background-image: url(../imges/haikei2.jpg);
-    background-size: cover;
-    background-repeat: repeat-y;
+    background-size: 100%;
+
 }
 header{
     margin-top: 7%;
@@ -17,6 +17,9 @@ header h1{
 }
 #gnav{
 padding-top: 2%;
+width: 100%;
+position: fixed;
+bottom: 0;
 }
 #navp{
 display: flex;
@@ -27,14 +30,19 @@ margin-bottom: 0;
 #navp li{
     width: 100%;
     list-style: none;
-    text-align: center;
-  font-size: 6vw;
-
-
+    font-size: 4vw;
+    border:solid white 0.2vw;
+    background-color: rgb(186, 181, 181);
+   position: relative;
+   
 }
 #navp li a{
-    color: white;
-
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding-top:13px;
+    padding-bottom: 13px; 
+    text-align: center;
 }
 .topg{
     margin-top:10%; 
@@ -67,9 +75,11 @@ body::after {
   body.fadeout::after {
     opacity: 1;
   }
-@media screen and (min-width:768){
+  footer{
+      padding-top:10%;
+  }
+@media screen and (min-width:768px){
     #navp li{
-      font-size: 6vw;
+      font-size: 30px;
     }
-
 }
